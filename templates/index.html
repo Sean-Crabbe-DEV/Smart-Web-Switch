@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+    <head>
+		<title>{{ title }}</title>
+    
+
+        <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+        <script>
+            $(document).ready(function() {
+                function j_cmd(data, fun)
+                {
+                    $.post('/ajax', data, fun);
+                }
+
+                $('button.AllOff').click(function() {
+                    j_cmd({
+                            'data' : 'AllOff'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.one').click(function() {
+                    j_cmd({
+                            'data' : 'OneOn'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.one2').click(function() {
+                    j_cmd({
+                            'data' : 'OneOff'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.two').click(function() {
+                    j_cmd({
+                            'data' : 'TwoOn'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+                
+                $('button.two2').click(function() {
+                    j_cmd({
+                            'data' : 'TwoOff'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.three').click(function() {
+                    j_cmd({
+                            'data' : 'ThreeOn'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.three2').click(function() {
+                    j_cmd({
+                            'data' : 'ThreeOff'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+                
+                $('button.four').click(function() {
+                    j_cmd({
+                            'data' : 'FourOn'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.four2').click(function() {
+                    j_cmd({
+                            'data' : 'FourOff'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.five').click(function() {
+                    j_cmd({
+                            'data' : 'FiveOn'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.five2').click(function() {
+                    j_cmd({
+                            'data' : 'FiveOff'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.six').click(function() {
+                    j_cmd({
+                            'data' : 'SixOn'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.six2').click(function() {
+                    j_cmd({
+                            'data' : 'SixOff'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.seven').click(function() {
+                    j_cmd({
+                            'data' : 'SevenOn'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.seven2').click(function() {
+                    j_cmd({
+                            'data' : 'SevenOff'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.eight').click(function() {
+                    j_cmd({
+                            'data' : 'EightOn'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.eight2').click(function() {
+                    j_cmd({
+                            'data' : 'EightOff'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+                
+            })
+        </script>
+    </head>
+
+    <body>
+		<h1>Basic Pi Smart Switch / Relay Control</h1>
+		<h2>The date and time on the server is: {{ time }}</h2>
+        <button class='AllOn'>All On</button>
+		<button class='AllOff'>All Off</button>
+        <button class='one'>One On</button>
+        <button class='one2'>One Off</button>
+        <button class='two'>Two On</button>
+        <button class='two2'>Two Off</button>
+        <button class='two'>Three On</button>
+        <button class='two2'>Three Off</button>
+        <button class='four'>Four On</button>
+        <button class='four2'>Four Off</button>
+        <button class='five'>Five On</button>
+        <button class='five2'>Five Off</button>
+        <button class='six'>Six On</button>
+        <button class='six2'>Six Off</button>
+        <button class='seven'>Seven On</button>
+        <button class='seven2'>Seven Off</button>
+        <button class='eight'>Eight On</button>
+        <button class='eight2'>Eight Off</button>
+        
+    </body>
+</html>

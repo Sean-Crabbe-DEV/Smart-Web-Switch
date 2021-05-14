@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <title>CodePen - Smart home dashboard controller UI</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="./style.css">
+
+        <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+        <script>
+            $(document).ready(function() {
+                function j_cmd(data, fun)
+                {
+                    $.post('/ajax', data, fun);
+                }
+
+                $('button.test').click(function() {
+                    j_cmd({
+                            'data' : 'test'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.command').click(function() {
+                    j_cmd({
+                            'data' : 'command'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
+                $('button.takeoff').click(function() {
+                    j_cmd({
+                            'data' : 'takeoff'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+                
+                $('button.land').click(function() {
+                    j_cmd({
+                            'data' : 'land'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+                
+            })
+        </script>
+    </head>
+    <body>
+        <!-- partial:index.partial.html -->
+        <div class="dashboard">
+        <!-- Category -->
+            <div class="category">
+            <ul>
+                <li><a href="#!" class="active">Living Room</a></li>
+                <li><a href="#!">Kitchen</a></li>
+                <li><a href="#!">Dinning</a></li>
+                <li><a href="#!">Weather</a></li>
+            </ul>
+            </div>
+        <!-- Appliances -->
+            <div class="appliances">
+            
+                <div class="appliance">
+                    <input type="checkbox" name="a" id="a">
+                    <label for="a">
+                    <i class="l"></i>
+                    <strong>Lamp</strong>
+                    <span data-o="opened" data-c="closed"></span>
+                    <small></small>
+                    </label>
+                </div>
+                
+                <div class="appliance">
+                    <input type="checkbox" name="a" id="b">
+                    <label for="b">
+                    <i class="r"></i>
+                    <strong>Router</strong>
+                    <span data-o="opened" data-c="closed"></span>
+                    <small></small>
+                    </label>
+                </div>
+                
+                <div class="appliance">
+                    <input type="checkbox" name="a" id="c">
+                    <label for="c">
+                    <i class="a"></i>
+                    <strong>Air</strong>
+                    <span data-o="opened" data-c="closed"></span>
+                    <small></small>
+                    </label>
+                </div>
+                
+                <div class="appliance">
+                    <input type="checkbox" name="a" id="d">
+                    <label for="d">
+                    <i class="f"></i>
+                    <strong>Fridge</strong>
+                    <span data-o="opened" data-c="closed"></span>
+                    <small></small>
+                    </label>
+                </div>
+
+                <div class="appliance">
+                    <input type="checkbox" name="a" id="e">
+                    <label for="b">
+                    <i class="r"></i>
+                    <strong>Router</strong>
+                    <span data-o="opened" data-c="closed"></span>
+                    <small></small>
+                    </label>
+                </div>
+
+                <div class="appliance">
+                    <input type="checkbox" name="a" id="f">
+                    <label for="b">
+                    <i class="r"></i>
+                    <strong>Router</strong>
+                    <span data-o="opened" data-c="closed"></span>
+                    <small></small>
+                    </label>
+                </div>
+
+                <div class="appliance">
+                    <input type="checkbox" name="a" id="g">
+                    <label for="b">
+                    <i class="r"></i>
+                    <strong>Router</strong>
+                    <span data-o="opened" data-c="closed"></span>
+                    <small></small>
+                    </label>
+                </div>
+
+                <div class="appliance">
+                    <input type="checkbox" name="a" id="h">
+                    <label for="b">
+                    <i class="r"></i>
+                    <strong>Router</strong>
+                    <span data-o="opened" data-c="closed"></span>
+                    <small></small>
+                    </label>
+                </div>        
+            </div>
+        </section>
+        </div>
+
+        <a href="https://www.youtube.com/watch?v=URUPsrmtYfs" target="_blank" title="Watch me speed code this" style="position: fixed; bottom: 10px; right: 10px"><img src="http://co0kie.github.io/codepen/youtube.png" alt=""></a>
+        <!-- partial -->
+        <script  src="./script.js"></script>
+    </body>
+</html>
