@@ -2,12 +2,13 @@
 ################## Imports
 #Flask Server Impt
 from flask import Flask, render_template, request
+import RPi.GPIO as GPIO
+import Adafruit_DHT
 import datetime
+import time
 import sys
 
-import RPi.GPIO as GPIO
-import time
-
+#Relay GPIO
 in1 = 12
 in2 = 16
 in3 = 18
@@ -36,6 +37,11 @@ GPIO.output(in6, False)
 GPIO.output(in7, False)
 GPIO.output(in8, False)
 
+# DHT11
+sensor=Adafruit_DHT.DHT11
+DHT11 = 4
+humidity, temperature = Adafruit_DHT.read_retry(sensor, DHT11)
+print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
 
 ################## Flask Server 
 sys.path = ['./lib'] + sys.path
@@ -48,9 +54,9 @@ def index():
     timeString = now.strftime("%d-%m-%Y %H:%M")
     templateData = {
       'title' : 'Basic Pi Smart Switch / Relay Control',
-      'time': timeString
+      'time' : timeString
       }
-    return render_template('index.html', **templateData);
+    return render_template('index.html', **templateData);    
 
 
 @app.route('/ajax', methods=['POST'])
@@ -73,8 +79,11 @@ def ajax():
         return 'do something else'
 
     elif(request.form['data'] == 'ThreeOn'):
-        
-        print('Sending Command /"takeoff/" to the tello')
+        GPIO.output(in3, True)
+        return 'do something else'
+
+    elif(request.form['data'] == 'ThreeOff'):
+        GPIO.output(in3, False)
         return 'do something else'
 
     elif(request.form['data'] == 'FourOn'):
