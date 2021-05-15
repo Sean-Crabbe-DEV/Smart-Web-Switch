@@ -3,7 +3,7 @@
 #Flask Server Impt
 from flask import Flask, render_template, request
 import RPi.GPIO as GPIO
-import Adafruit_DHT
+#import Adafruit_DHT
 import datetime
 import time
 import sys
@@ -38,10 +38,10 @@ GPIO.output(in7, False)
 GPIO.output(in8, False)
 
 # DHT11
-sensor=Adafruit_DHT.DHT11
-DHT11 = 4
-humidity, temperature = Adafruit_DHT.read_retry(sensor, DHT11)
-print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
+#sensor=Adafruit_DHT.DHT11
+#DHT11 = 4
+#humidity, temperature = Adafruit_DHT.read_retry(sensor, DHT11)
+#print('Temp={0:0.1f}*C  Humidity={1:0.1f}%'.format(temperature, humidity))
 
 ################## Flask Server 
 sys.path = ['./lib'] + sys.path
