@@ -90,6 +90,10 @@ def ajax():
         GPIO.output(in4, True)
         return 'do something else'
 
+    elif(request.form['data'] == 'FourOff'):
+        GPIO.output(in4, False)
+        return 'do something else'
+
     elif(request.form['data'] == 'FiveOn'):
         GPIO.output(in5, True)
         return 'do something else'
@@ -119,6 +123,28 @@ def ajax():
         return 'do something else'
 
     elif(request.form['data'] == 'EightOff'):
+        GPIO.output(in8, False)
+        return 'do something else'
+
+    elif(request.form['data'] == 'AllOn'):
+        GPIO.output(in1, True)
+        GPIO.output(in2, True)
+        GPIO.output(in3, True)
+        GPIO.output(in4, True)
+        GPIO.output(in5, True)
+        GPIO.output(in6, True)
+        GPIO.output(in7, True)
+        GPIO.output(in8, True)
+        return 'do something else'
+
+    elif(request.form['data'] == 'AllOff'):
+        GPIO.output(in1, False)
+        GPIO.output(in2, False)
+        GPIO.output(in3, False)
+        GPIO.output(in4, False)
+        GPIO.output(in5, False)
+        GPIO.output(in6, False)
+        GPIO.output(in7, False)
         GPIO.output(in8, False)
         return 'do something else'
 

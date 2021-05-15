@@ -12,6 +12,14 @@
                     $.post('/ajax', data, fun);
                 }
 
+                $('button.AllOn').click(function() {
+                    j_cmd({
+                            'data' : 'AllOn'
+                        }, function(ret){
+                            console.log(ret);
+                        })
+                })
+
                 $('button.AllOff').click(function() {
                     j_cmd({
                             'data' : 'AllOff'
