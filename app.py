@@ -36,15 +36,6 @@ GPIO.output(in6, False)
 GPIO.output(in7, False)
 GPIO.output(in8, False)
 
-#Welcome Message
-print("")
-print(" ")
-
-#Displays The Hosts (This Device) hostname + ip address 
-print("Your Computer Name is:" + hostname)    
-print("Your Computer IP Address is:" + IPAddr)
-print(" ")
-print("Starting Flask")
 
 ################## Flask Server 
 sys.path = ['./lib'] + sys.path
@@ -67,22 +58,18 @@ def ajax():
     
     if(request.form['data'] == 'OneOn'):
         GPIO.output(in1, True)
-        print('Relay One ')
         return 'do something'
 
     elif(request.form['data'] == 'OneOff'):
         GPIO.output(in1, False)
-        print('Sending Command /"command/" to the tello')
         return 'do something else'
 
     elif(request.form['data'] == 'TwoOn'):
-        
-        print('Sending Command /"command/" to the tello')
+        GPIO.output(in2, True)
         return 'do something else'
 
     elif(request.form['data'] == 'TwoOff'):
-        
-        print('Sending Command /"command/" to the tello')
+        GPIO.output(in2, False)
         return 'do something else'
 
     elif(request.form['data'] == 'ThreeOn'):
