@@ -40,9 +40,7 @@ GPIO.output(in8, False)
 print("")
 print(" ")
 
-#Displays The Hosts (This Device) hostname + ip address
-hostname = socket.gethostname()    
-IPAddr = socket.gethostbyname(hostname)    
+#Displays The Hosts (This Device) hostname + ip address 
 print("Your Computer Name is:" + hostname)    
 print("Your Computer IP Address is:" + IPAddr)
 print(" ")
